@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F1EA95F42083DFEE00F231F8 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = F1EA95F32083DFEE00F231F8 /* Car.m */; };
+		F1EA95F72083EA2D00F231F8 /* Motorcycle.m in Sources */ = {isa = PBXBuildFile; fileRef = F1EA95F62083EA2D00F231F8 /* Motorcycle.m */; };
 		F5961A2217DD013A008D39EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5961A2117DD013A008D39EA /* Foundation.framework */; };
 		F5961A2417DD013A008D39EA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5961A2317DD013A008D39EA /* CoreGraphics.framework */; };
 		F5961A2617DD013A008D39EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5961A2517DD013A008D39EA /* UIKit.framework */; };
@@ -36,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F1EA95F22083DFEE00F231F8 /* Car.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
+		F1EA95F32083DFEE00F231F8 /* Car.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
+		F1EA95F52083EA2D00F231F8 /* Motorcycle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Motorcycle.h; sourceTree = "<group>"; };
+		F1EA95F62083EA2D00F231F8 /* Motorcycle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Motorcycle.m; sourceTree = "<group>"; };
 		F5961A1E17DD013A008D39EA /* Vehicles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vehicles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5961A2117DD013A008D39EA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F5961A2317DD013A008D39EA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -127,6 +133,10 @@
 				F5961A3717DD013A008D39EA /* VehicleListTableViewController.m */,
 				F5961A3917DD013A008D39EA /* VehicleDetailViewController.h */,
 				F5961A3A17DD013A008D39EA /* VehicleDetailViewController.m */,
+				F1EA95F22083DFEE00F231F8 /* Car.h */,
+				F1EA95F32083DFEE00F231F8 /* Car.m */,
+				F1EA95F52083EA2D00F231F8 /* Motorcycle.h */,
+				F1EA95F62083EA2D00F231F8 /* Motorcycle.m */,
 				F5961A3C17DD013A008D39EA /* Images.xcassets */,
 				F5961A2817DD013A008D39EA /* Supporting Files */,
 			);
@@ -209,6 +219,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Designated Nerd Software";
 				TargetAttributes = {
+					F5961A1D17DD013A008D39EA = {
+						DevelopmentTeam = UE52HE9BWK;
+					};
 					F5961A4117DD013A008D39EA = {
 						TestTargetID = F5961A1D17DD013A008D39EA;
 					};
@@ -259,11 +272,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1EA95F42083DFEE00F231F8 /* Car.m in Sources */,
 				F5961A3217DD013A008D39EA /* AppDelegate.m in Sources */,
 				F5961A3817DD013A008D39EA /* VehicleListTableViewController.m in Sources */,
 				F5961A2E17DD013A008D39EA /* main.m in Sources */,
 				F5961A3B17DD013A008D39EA /* VehicleDetailViewController.m in Sources */,
 				F5961A5B17DD04AF008D39EA /* Vehicle.m in Sources */,
+				F1EA95F72083EA2D00F231F8 /* Motorcycle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +401,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = UE52HE9BWK;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Vehicles/Vehicles-Prefix.pch";
 				INFOPLIST_FILE = "Vehicles/Vehicles-Info.plist";
@@ -399,6 +415,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = UE52HE9BWK;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Vehicles/Vehicles-Prefix.pch";
 				INFOPLIST_FILE = "Vehicles/Vehicles-Info.plist";
@@ -466,6 +483,7 @@
 				F5961A5517DD013A008D39EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F5961A5617DD013A008D39EA /* Build configuration list for PBXNativeTarget "VehiclesTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +492,7 @@
 				F5961A5817DD013A008D39EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

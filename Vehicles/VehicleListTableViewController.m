@@ -10,6 +10,8 @@
 
 #import "VehicleDetailViewController.h"
 #import "Vehicle.h"
+#import "Car.h"
+#import "Motorcycle.h"
 
 @interface VehicleListTableViewController ()
 @property (nonatomic, strong) NSMutableArray *vehicles;
@@ -21,13 +23,22 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-}
+    
+    self.vehicles = [NSMutableArray array];
+    
+    // Call the setup method
+    [self setupVehicleArray];
+    
+    // Set the title of the View Controller, which will display in the Navigation bar.
+    self.title = @"Vehicles";
+    
+}//awakeFromNib
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-}
+}//viewDidLoad
 
 
 - (void)didReceiveMemoryWarning
@@ -35,6 +46,83 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+#pragma mark - Add cars to vehiclesArray
+-(void)setupVehicleArray
+{
+    //Create a car.
+    Car *mustang = [[Car alloc] init];
+    mustang.brandName = @"Ford";
+    mustang.modelName = @"Mustang";
+    mustang.modelYear = 1968;
+    mustang.isConvertible = YES;
+    mustang.isHatchback = NO;
+    mustang.hasSunroof = NO;
+    mustang.numberOfDoors = 2;
+    mustang.powerSource = @"gas engine";
+    
+    //Add it to the array
+    [self.vehicles addObject:mustang];
+    
+    //Create another car.
+    Car *outback = [[Car alloc] init];
+    outback.brandName = @"Subaru";
+    outback.modelName = @"Outback";
+    outback.modelYear = 1999;
+    outback.isConvertible = NO;
+    outback.isHatchback = YES;
+    outback.hasSunroof = NO;
+    outback.numberOfDoors = 5;
+    outback.powerSource = @"gas engine";
+    
+    //Add it to the array.
+    [self.vehicles addObject:outback];
+    
+    //Create another car
+    Car *prius = [[Car alloc] init];
+    prius.brandName = @"Toyota";
+    prius.modelName = @"Prius";
+    prius.modelYear = 2002;
+    prius.hasSunroof = YES;
+    prius.isConvertible = NO;
+    prius.isHatchback = YES;
+    prius.numberOfDoors = 4;
+    prius.powerSource = @"hybrid engine";
+    
+    //Add it to the array.
+    [self.vehicles addObject:prius];
+    
+    //Create a motorcycle
+    Motorcycle *harley = [[Motorcycle alloc] init];
+    harley.brandName = @"Harley-Davidson";
+    harley.modelName = @"Softail";
+    harley.modelYear = 1979;
+    harley.engineNoise = @"Vrrrrrrrroooooooooom!";
+    
+    //Add it to the array.
+    [self.vehicles addObject:harley];
+    
+    //Create another motorcycle
+    Motorcycle *kawasaki = [[Motorcycle alloc] init];
+    kawasaki.brandName = @"Kawasaki";
+    kawasaki.modelName = @"Ninja";
+    kawasaki.modelYear = 2005;
+    kawasaki.engineNoise = @"Neeeeeeeeeeeeeeeeow!";
+    
+    //Add it to the array
+    [self.vehicles addObject:kawasaki];
+    
+    
+    
+    //Sort the array by the model year
+    NSSortDescriptor *modelYear = [NSSortDescriptor sortDescriptorWithKey:@"modelYear" ascending:YES];
+    [self.vehicles sortUsingDescriptors:@[modelYear]];
+    
+    
+    
+}//setupVehicleArray
+
 
 
 
@@ -54,7 +142,9 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
     Vehicle *rowVehicle = self.vehicles[indexPath.row];
-    cell.textLabel.text = [rowVehicle description];
+//    NSString *vehicleBrand = rowVehicle.brandName;
+    cell.textLabel.text = [rowVehicle vehicleTitleString];
+//    cell.textLabel.text = vehicleBrand;
     return cell;
 }
 
